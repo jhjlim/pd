@@ -1,0 +1,56 @@
+find IP address on Pi:
+sudo ifconfig
+
+sudo apt-get install libportmidi-dev
+(remember -lportmidi flag)
+
+cd /usr/share/vim
+edit vimrc and add:
+syntax on
+set number
+
+cd /home/pi/midiVideo/
+
+
+sox samplerate/bitdepth/channel number converter
+sox 04.aiff -r 19000 -b 8 -c 1 04.wav
+
+
+Flashing raspberry Pi OS:
+*insert SD card
+diskutil list
+diskutil unmountDisk /dev/disk#
+sudo dd bs=1m if=************.img of=/dev/disk#
+
+
+arch linux cheats:
+*add new user to sudoers list:
+cd /etc/
+vim sudoers
+*then add
+root ALL=(ALL) ALL
+**** ALL=(ALL) ALL
+Defaults:USER_NAME      !authenticate //this removes prompts for user sudo password
+
+*set vim default
+cd /etc/
+sudo vim vimrc
+*add lines:
+set number
+syntax on
+set nofoldenable
+
+Pi Cheat Sheet
+diskutil list							;list all drives
+diskutil unmountDisk /dev/disk2		;unmount SD card if it is is disk2
+sudo dd bs=1m if=archlinux-hf-2013-07-22.img of=/dev/disk2
+
+Raspbian Auto login:
+1:2345:respawn:/sbin/getty --noclear 38400 tty1
+This starts the getty process on tty1. You can add the getty --autologin option to that line:
+1:2345:respawn:/sbin/getty --autologin {USERNAME} --noclear 38400 tty1
+(Replace {USERNAME} with the user you want to login.)
+
+Raspbian run on startup:
+sudo vim ~/.bashrc
+add script at bottom of file.  it will run straight after login
