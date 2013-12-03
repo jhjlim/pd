@@ -1,0 +1,34 @@
+#N canvas 370 151 804 276 10;
+#X text 635 14 TouchOSC;
+#X text 636 29 http://hexler.net/touchosc;
+#X obj 228 218 sendOSC;
+#X text 636 44 basic.pd v1.0;
+#X obj 32 108 print osc;
+#X text 381 185 Use osc address of control. OSC messages are constructed
+like this: /pagenumber/controlname;
+#X text 228 108 Sending values to the iPhone on port 9000 Replace 10.10.10.10
+with the ip-address of the iPhone;
+#X text 29 19 Receiving values on port 8000 from the iPhone. Send values
+from the iPhone to see the osc adress of the control for sending values
+;
+#X obj 32 75 dumpOSC 8000;
+#X msg 265 184 send /1/f1 1;
+#X obj 153 82 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 153 114 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 212 59 connect localhost 6000;
+#X obj 84 156 prepend send /foo;
+#X msg 228 152 connect 10.0.1.30 6000;
+#X obj 438 39 keyup;
+#X obj 442 80 select 32;
+#X connect 8 0 4 0;
+#X connect 9 0 2 0;
+#X connect 10 0 11 0;
+#X connect 11 0 13 0;
+#X connect 12 0 2 0;
+#X connect 13 0 2 0;
+#X connect 14 0 2 0;
+#X connect 15 0 16 0;
+#X connect 16 0 10 0;
+#X coords 0 0 1 1 85 60 0;
