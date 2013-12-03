@@ -1,0 +1,32 @@
+#N canvas 137 193 804 276 10;
+#X obj 228 218 sendOSC;
+#X obj 32 108 print osc;
+#X obj 32 75 dumpOSC 8000;
+#X msg 265 184 send /1/f1 1;
+#X obj 493 -21 slider 127 0 15;
+#X obj 442 178 prepend send /1/f1;
+#X obj 228 -9 loadbang;
+#X obj 228 20 delay 1000;
+#X obj 595 8 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 595 33 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 595 58 metro 10;
+#X obj 594 86 counter 2 0 127;
+#X floatatom 595 129 5 0 0 0 - - -;
+#X msg 228 152 connect 10.0.1.30 9000;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 13 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 5 0;
+#X connect 11 0 12 0;
+#X connect 13 0 0 0;
+#X coords 0 0 1 1 85 60 0;
