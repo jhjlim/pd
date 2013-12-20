@@ -54,3 +54,17 @@ This starts the getty process on tty1. You can add the getty --autologin option 
 Raspbian run on startup:
 sudo vim ~/.bashrc
 add script at bottom of file.  it will run straight after login
+
+
+$ wget https://puredata.info/downloads/pd-extended-0-43-3-on-raspberry-pi-raspbian-wheezy-armhf/releases/1.0/Pd-0.43.3-extended-20121004.deb 
+
+$ sudo dpkg -i Pd-0.43.3-extended-20121004.deb 
+
+$ sudo apt-get -f install 
+
+it should be installed. For root priorities: 
+
+$ sudo chmod 4755 /usr/bin/pd-extended 
+
+
+
